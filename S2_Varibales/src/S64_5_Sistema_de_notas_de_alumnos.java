@@ -16,22 +16,25 @@ public class S64_5_Sistema_de_notas_de_alumnos {
         Scanner sc = new Scanner(System.in);
         System.out.println("--------------- Sistema de notas finales ----------------");
 
-        int contador = 0;
+
+        int contadorMayorACinco = 0;
+        double sumaMayorACinco = 0;
         double promedioMayorACinco = 0;
         double promedioMenorACuatro = 0;
 
-        for (int i = 0; 10 > i; i++){
-            System.out.println("Ingrese la nota N° " + (i + 1) + " :");
+        for (int i = 0; 5 > i; i++){
+            System.out.println("Ingrese la nota N°" + (i + 1) + " :");
             double notas = sc.nextDouble();
 
             if(notas < 0 || notas > 7){
                 System.out.println("Ingrese una nota menor o igual a 7");
                 break;
             }
-            contador++;
+            //contador++;
 
             if(notas > 5){
-                promedioMayorACinco = notas * notas / notas;
+                contadorMayorACinco++;
+                promedioMayorACinco = sumaMayorACinco / contadorMayorACinco;
             }
 
             if(notas < 4){
@@ -40,9 +43,10 @@ public class S64_5_Sistema_de_notas_de_alumnos {
 
         }
 
-        System.out.println(contador);
-        System.out.println(promedioMayorACinco);
-        System.out.println(promedioMenorACuatro);
+
+        System.out.println("cantidad de valores mayores a 5: " + contadorMayorACinco);
+        System.out.println("El promedio mayor a cinco es: " + promedioMayorACinco);
+        System.out.println("El promedio menor a 4 es: " + promedioMenorACuatro);
 
 
 
