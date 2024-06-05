@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class S64_5_Sistema_de_notas_de_alumnos {
+public class S64_5_Sistema_de_notas_de_alumnos_Rebuilt {
 
     /*
 
@@ -25,6 +25,7 @@ public class S64_5_Sistema_de_notas_de_alumnos {
         double sumaMenorACuatro = 0;
         double promedioMenorACuatro = 0;
 
+
         for (int i = 0; 5 > i; i++){
             System.out.println("Ingrese la nota N°" + (i + 1) + " :");
             double notas = sc.nextDouble();
@@ -32,32 +33,33 @@ public class S64_5_Sistema_de_notas_de_alumnos {
             if(notas < 0 || notas > 7){
                 System.out.println("Ingrese una nota menor o igual a 7");
                 i--;
+            }else if (notas == 0){
+                System.out.println("La nota no puede ser igual a 0");
+                break;
+            }else{
+
+                if(notas > 5){
+                    sumaMayorACinco+= notas;
+                    contadorMayorACinco++;
+
+                }
+
+                if(notas < 4){
+                    sumaMenorACuatro = sumaMenorACuatro + notas;
+                    contadorMenorACuatro++;
+
+                }
+
+                if(contadorMayorACinco > 0){
+                    promedioMayorACinco = sumaMayorACinco / contadorMayorACinco;
+                }
+
+                if(contadorMenorACuatro < 4){
+                    promedioMenorACuatro = sumaMenorACuatro / contadorMenorACuatro;
+                }
+
             }
 
-            if(notas > 5){
-                sumaMayorACinco+= notas;
-                contadorMayorACinco++;
-
-            }
-
-            if(notas < 4){
-                sumaMenorACuatro = sumaMenorACuatro + notas;
-                contadorMenorACuatro++;
-            }
-            if(notas == 0){
-                System.out.println("Error, la nota no puede ser cero");
-
-            }
-
-
-        }
-
-        if(contadorMayorACinco > 0){
-            promedioMayorACinco = sumaMayorACinco / contadorMayorACinco;
-        }
-
-        if(contadorMenorACuatro < 4){
-            promedioMenorACuatro = sumaMenorACuatro / contadorMenorACuatro;
         }
 
 
@@ -66,6 +68,9 @@ public class S64_5_Sistema_de_notas_de_alumnos {
         System.out.println("------------------------------------------------------------------------");
         System.out.println("cantidad de valores mayores a CUATRO: " + contadorMenorACuatro);
         System.out.println("El promedio menor a CUATRO es: " + promedioMenorACuatro);
+
+
+
 
 
 
