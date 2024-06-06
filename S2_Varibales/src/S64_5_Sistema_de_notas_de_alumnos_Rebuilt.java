@@ -17,6 +17,8 @@ public class S64_5_Sistema_de_notas_de_alumnos_Rebuilt {
         System.out.println("--------------- Sistema de notas finales ----------------");
 
 
+        int contadorIgualAUno = 0;
+
         int contadorMayorACinco = 0;
         double sumaMayorACinco = 0;
         double promedioMayorACinco = 0;
@@ -25,8 +27,10 @@ public class S64_5_Sistema_de_notas_de_alumnos_Rebuilt {
         double sumaMenorACuatro = 0;
         double promedioMenorACuatro = 0;
 
+        boolean error = false;
 
-        for (int i = 0; 5 > i; i++){
+
+        for (int i = 0; 20 > i; i++){
             System.out.println("Ingrese la nota N°" + (i + 1) + " :");
             double notas = sc.nextDouble();
 
@@ -35,8 +39,13 @@ public class S64_5_Sistema_de_notas_de_alumnos_Rebuilt {
                 i--;
             }else if (notas == 0){
                 System.out.println("La nota no puede ser igual a 0");
+                error = true;
                 break;
             }else{
+
+                if(notas == 1){
+                    contadorIgualAUno++;
+                }
 
                 if(notas > 5){
                     sumaMayorACinco+= notas;
@@ -50,24 +59,33 @@ public class S64_5_Sistema_de_notas_de_alumnos_Rebuilt {
 
                 }
 
-                if(contadorMayorACinco > 0){
-                    promedioMayorACinco = sumaMayorACinco / contadorMayorACinco;
-                }
-
-                if(contadorMenorACuatro < 4){
-                    promedioMenorACuatro = sumaMenorACuatro / contadorMenorACuatro;
-                }
-
             }
-
         }
 
 
-        System.out.println("cantidad de valores mayores a CINCO: " + contadorMayorACinco);
-        System.out.println("El promedio mayor a CINCO es: " + promedioMayorACinco);
-        System.out.println("------------------------------------------------------------------------");
-        System.out.println("cantidad de valores mayores a CUATRO: " + contadorMenorACuatro);
-        System.out.println("El promedio menor a CUATRO es: " + promedioMenorACuatro);
+        if(contadorMayorACinco > 0){
+            promedioMayorACinco = sumaMayorACinco / contadorMayorACinco;
+        }
+
+        if(contadorMenorACuatro < 4){
+            promedioMenorACuatro = sumaMenorACuatro / contadorMenorACuatro;
+        }
+
+
+        if(!error){
+            System.out.println("Valores iguales a UNO: " + contadorIgualAUno);
+            System.out.println("------------------------------------------------------------------------");
+            System.out.println("cantidad de valores mayores a CINCO: " + contadorMayorACinco);
+            System.out.println("El promedio mayor a CINCO es: " + promedioMayorACinco);
+            System.out.println("------------------------------------------------------------------------");
+            System.out.println("cantidad de valores mayores a CUATRO: " + contadorMenorACuatro);
+            System.out.println("El promedio menor a CUATRO es: " + promedioMenorACuatro);
+        }else{
+            System.out.println("Sistema cerrado");
+        }
+
+
+
 
 
 
