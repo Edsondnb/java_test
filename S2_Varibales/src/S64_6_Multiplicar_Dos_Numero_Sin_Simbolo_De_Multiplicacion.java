@@ -1,0 +1,2 @@
+package PACKAGE_NAME;public class S64_6_Multiplicar_Dos_Numero_Sin_Simbolo_De_Multiplicacion {
+}
