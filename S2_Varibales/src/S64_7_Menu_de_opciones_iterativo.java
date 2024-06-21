@@ -19,13 +19,15 @@ public class S64_7_Menu_de_opciones_iterativo {
 
         Object[] opArreglo = opciones.keySet().toArray();
 
+
+        do {
         Object opcion = JOptionPane.showInputDialog(null,
                 "Seleccione un Opción",
                 "Mantenedor de Productos",
                 JOptionPane.INFORMATION_MESSAGE, null, opArreglo, opArreglo[0]);
 
 
-        do {
+
             if (opcion == null) {
                 JOptionPane.showMessageDialog(null, "Debe seleccionar una operación");
                 break;
@@ -35,56 +37,26 @@ public class S64_7_Menu_de_opciones_iterativo {
                 switch (opcionIndice) {
                     case 1: {
                         JOptionPane.showMessageDialog(null, "Usuario actualizado");
-                        return;
+                        break;
                     }
                     case 2: {
                         JOptionPane.showMessageDialog(null, "Usuario Eliminado");
-
+                        break;
                     }
                     case 3: {
                         JOptionPane.showMessageDialog(null, "Usuario Agregado");
-
+                        break;
                     }
                     case 4: {
                         JOptionPane.showMessageDialog(null, "Listado de Usuarios");
-
+                        break;
                     }
                 }
             }
         }
-        while ( opcionIndice != 5);
+        while ( opcionIndice < 5);
 
         JOptionPane.showMessageDialog(null, "Hasta pronto");
 
-
-        /*
-        if (opcion == null) {
-            JOptionPane.showMessageDialog(null, "Debe seleccionar una operación");
-        } else {
-            opcionIndice = opciones.get(opcion.toString());
-
-            switch (opcionIndice) {
-                case 1: {
-                    JOptionPane.showMessageDialog(null, "Usuario actualizado");
-                    break;
-                }
-                case 2: {
-                    JOptionPane.showMessageDialog(null, "Usuario Eliminado");
-                    break;
-                }
-                case 3: {
-                    JOptionPane.showMessageDialog(null, "Usuario Agregado");
-                    break;
-                }
-                case 4: {
-                    JOptionPane.showMessageDialog(null, "Listado de Usuarios");
-                    break;
-                }
-                case 5: {
-                    JOptionPane.showMessageDialog(null, "Hasta pronto");
-                    break;
-                }
-            }
-        }*/
     }
 }
