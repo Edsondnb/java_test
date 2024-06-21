@@ -8,6 +8,7 @@ public class S73_Pasar_argumento_por_valor {
 
         System.out.println("Iniamos el metodo main con i = " + i);
         test(i);
+        //No son inmutables, es decir, no cambia su valor.
         System.out.println("Finaliza el metodo main con el valor de  i (Se mantiene igual )= " + i);
     }
                             //int
